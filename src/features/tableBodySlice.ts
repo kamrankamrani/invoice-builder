@@ -2,55 +2,61 @@ import { createSlice } from "@reduxjs/toolkit";
 import type { PayloadAction } from "@reduxjs/toolkit";
 import { tableBodyType } from "../Services/Types";
 
-const initialState: tableBodyType[] = [
-  {
-    row: 1,
-    count: 2,
-    name: "دیتا",
-    off: 10,
-    price: 1000,
-    total: 1000,
-    unit: "عدد",
-  },
-  {
-    row: 2,
-    count: 2,
-    name: "دیتا",
-    off: 10,
-    price: 1000,
-    total: 1000,
-    unit: "عدد",
-  },
-];
+const initialState: { bodyData: tableBodyType[] } = {
+  bodyData: [
+    {
+      row: 1,
+      count: 2,
+      name: "شماره اول",
+      off: 10,
+      price: 1000,
+      total: 1000,
+      unit: "عدد",
+    },
+    {
+      row: 2,
+      count: 2,
+      name: "شماره دوم",
+      off: 10,
+      price: 1000,
+      total: 1000,
+      unit: "عدد",
+    },
+    {
+      row: 3,
+      count: 2,
+      name: "شماره سوم",
+      off: 10,
+      price: 1000,
+      total: 1000,
+      unit: "عدد",
+    },
+  ],
+};
 
 const tableBodySlice = createSlice({
   name: "tableBodySlice",
   initialState,
   reducers: {
     increaseItem(state, action: PayloadAction<number>) {
-      state.forEach((val) => {
-        if (val.row === action.payload) {
-          val.count = val.count + 1;
-        }
-      });
+      state.bodyData[action.payload].count =
+        state.bodyData[action.payload].count + 1;
     },
     decreaseItem(state, action: PayloadAction<number>) {
-      state.forEach((val) => {
-        if (val.row === action.payload) {
-          val.count = val.count - 1;
-        }
-      });
+      state.bodyData[action.payload].count =
+        state.bodyData[action.payload].count - 1;
     },
     deleteItem(state, action: PayloadAction<number>) {
-      state.forEach((val, index) => {
-        if (val.row === action.payload) {
-          state.splice(index, 1);
-        }
-      });
+      state.bodyData.splice(action.payload, 1);
+    },
+    updateItemPrice(state, action: PayloadAction<number>) {
+      state.bodyData[action.payload].total =
+        state.bodyData[action.payload].count *
+        state.bodyData[action.payload].price;
     },
   },
 });
 
-export const { increaseItem, decreaseItem, deleteItem } =
+export const { increaseItem, decreaseItem, deleteItem, updateItemPrice } =
   tableBodySlice.actions;
 export default tableBodySlice.reducer;

@@ -2,13 +2,14 @@ import { PersianNumber } from "../../Services/ConvertNumbers";
 import AddIcon from "@mui/icons-material/Add";
 import RemoveIcon from "@mui/icons-material/Remove";
 import DeleteIcon from "@mui/icons-material/Delete";
-import "./Style/style.css";
 import { useAppDispatch } from "../../customHooks";
 import {
   decreaseItem,
   deleteItem,
   increaseItem,
+  updateItemPrice,
 } from "../../features/tableBodySlice";
+import "./Style/style.css";
 
 interface IProps {
   count: number;
@@ -19,9 +20,11 @@ export default function CounterPanel({ count, row }: IProps) {
   const dispatch = useAppDispatch();
   const handleAddItemClick = () => {
     dispatch(increaseItem(row));
+    dispatch(updateItemPrice(row));
   };
   const handleRemoveItemClick = () => {
     dispatch(decreaseItem(row));
+    dispatch(updateItemPrice(row));
   };
   const handleDeleteClick = () => {
     dispatch(deleteItem(row));
