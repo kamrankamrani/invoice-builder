@@ -16,7 +16,9 @@ export function GridBody() {
           <React.Fragment key={tableData.row}>
             <div className="grid-item">{PersianNumber(tableData.row)}</div>
             <div className="grid-item">{tableData.name}</div>
-            <div className="grid-item">{<CounterPanel />}</div>
+            <div className="grid-item">
+              {<CounterPanel count={tableData.count} row={tableData.row} />}
+            </div>
             <div className="grid-item">{tableData.unit}</div>
             <div className="grid-item">{PersianNumber(tableData.price)}</div>
             <div className="grid-item">{PersianNumber(tableData.off)}</div>

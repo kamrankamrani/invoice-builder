@@ -34,8 +34,23 @@ const tableBodySlice = createSlice({
         }
       });
     },
+    decreaseItem(state, action: PayloadAction<number>) {
+      state.forEach((val) => {
+        if (val.row === action.payload) {
+          val.count = val.count - 1;
+        }
+      });
+    },
+    deleteItem(state, action: PayloadAction<number>) {
+      state.forEach((val, index) => {
+        if (val.row === action.payload) {
+          state.splice(index, 1);
+        }
+      });
+    },
   },
 });
 
-export const { increaseItem } = tableBodySlice.actions;
+export const { increaseItem, decreaseItem, deleteItem } =
+  tableBodySlice.actions;
 export default tableBodySlice.reducer;
