@@ -1,30 +1,14 @@
 import React from "react";
+import { useAppSelector } from "../../customHooks";
 import { PersianNumber } from "../../Services/ConvertNumbers";
 import { tableBodyType } from "../../Services/Types";
 import CounterPanel from "../CounterPanel/CounterPanel";
 import "./Style/style.css";
 
 export function GridBody() {
-  const mockData: tableBodyType[] = [
-    {
-      row: 1,
-      count: 2,
-      name: "دیتا",
-      off: 10,
-      price: 1000,
-      total: 1000,
-      unit: "عدد",
-    },
-    {
-      row: 2,
-      count: 2,
-      name: "دیتا",
-      off: 10,
-      price: 1000,
-      total: 1000,
-      unit: "عدد",
-    },
-  ];
+  const mockData: tableBodyType[] = useAppSelector(
+    (state) => state.tableBodySlice
+  );
   return (
     <div className="grid grid-items-container">
       {mockData.map((tableData) => {
