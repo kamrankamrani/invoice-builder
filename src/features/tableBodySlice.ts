@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import type { PayloadAction } from "@reduxjs/toolkit";
-import { tableBodyType } from "../Services/Types";
+import { tableBodyType, updateTitleData } from "../Services/Types";
 
 const initialState: { bodyData: tableBodyType[] } = {
   bodyData: [
@@ -54,9 +54,17 @@ const tableBodySlice = createSlice({
         state.bodyData[action.payload].count *
         state.bodyData[action.payload].price;
     },
+    updateTitle(state, action: PayloadAction<updateTitleData>) {
+      state.bodyData[action.payload.row].name = action.payload.title;
+    },
   },
 });
 
-export const { increaseItem, decreaseItem, deleteItem, updateItemPrice } =
-  tableBodySlice.actions;
+export const {
+  increaseItem,
+  decreaseItem,
+  deleteItem,
+  updateItemPrice,
+  updateTitle,
+} = tableBodySlice.actions;
 export default tableBodySlice.reducer;

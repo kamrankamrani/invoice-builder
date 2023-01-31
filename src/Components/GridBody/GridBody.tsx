@@ -3,6 +3,7 @@ import { useAppSelector } from "../../customHooks";
 import { PersianNumber } from "../../Services/ConvertNumbers";
 import { tableBodyType } from "../../Services/Types";
 import CounterPanel from "../CounterPanel/CounterPanel";
+import TitlePanel from "../TitlePanel/TitlePanel";
 import "./Style/style.css";
 
 export function GridBody() {
@@ -15,7 +16,9 @@ export function GridBody() {
         return (
           <React.Fragment key={tableData.row}>
             <div className="grid-item">{PersianNumber(index + 1)}</div>
-            <div className="grid-item">{tableData.name}</div>
+            <div className="grid-item">
+              {<TitlePanel name={tableData.name} row={index} />}
+            </div>
             <div className="grid-item">
               {<CounterPanel count={tableData.count} row={index} />}
             </div>

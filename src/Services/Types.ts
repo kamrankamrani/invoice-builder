@@ -18,3 +18,8 @@ export interface tableHeaderType {
   total: string;
   [Symbol.iterator](): IterableIterator<string>;
 }
+
+export interface updateTitleData {
+  row: number;
+  title: string;
+}
