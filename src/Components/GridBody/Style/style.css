@@ -1,0 +1,15 @@
+.grid-item {
+  border: 1px solid var(--light-dark-back);
+  border-top: none;
+  border-left: none;
+  padding: 0.25rem 0.5rem;
+}
+
+.grid-items-container > div:nth-last-of-type(7n + 1) {
+  border-left: 1px solid var(--light-dark-back);
+}
+
+.grid-items-container {
+  direction: rtl;
+  gap: 0;
+}

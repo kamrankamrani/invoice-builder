@@ -1,0 +1,13 @@
+.counter-panel-container {
+  justify-content: space-between;
+}
+
+.counter-panel-container .icons-container {
+  background-color: var(--text);
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  padding: 0.1rem;
+}
+
+.icons-container svg {
+  cursor: pointer;
+}
