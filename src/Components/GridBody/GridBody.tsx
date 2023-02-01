@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { useAppSelector } from "../../customHooks";
 import { PersianNumber } from "../../Services/ConvertNumbers";
 import { tableBodyType } from "../../Services/Types";
