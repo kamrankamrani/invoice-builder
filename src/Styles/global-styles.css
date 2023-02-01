@@ -61,6 +61,21 @@ button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
+
+input {
+  font-family: Vazirmatn, Inter, Avenir, Helvetica, Arial, sans-serif;
+  width: min(80%, 12rem);
+  padding: 0;
+  margin: 0;
+  border-radius: 0.25rem;
+  padding: 0 0.2rem;
+  /* font-size: 2rem; */
+}
+
+input:focus {
+  outline: none;
+  border: 1px solid var(--light-dark-back);
+}
 /* custom global css*/
 .grid {
   display: grid;
@@ -68,7 +83,7 @@ button:focus-visible {
   grid-template-columns: 0.5fr 2fr repeat(5, 1fr);
   width: min(100%, 65rem);
   min-width: 40rem;
-  align-items: center;
+  /* align-items: center; */
 }
 
 .container {

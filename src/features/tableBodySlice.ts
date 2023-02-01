@@ -15,7 +15,7 @@ const initialState: { bodyData: tableBodyType[] } = {
     },
     {
       row: 2,
-      count: 2,
+      count: 5,
       name: "شماره دوم",
       off: 10,
       price: 1000,

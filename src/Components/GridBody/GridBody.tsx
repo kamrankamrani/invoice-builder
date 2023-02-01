@@ -4,6 +4,7 @@ import { PersianNumber } from "../../Services/ConvertNumbers";
 import { tableBodyType } from "../../Services/Types";
 import CounterPanel from "../CounterPanel/CounterPanel";
 import TitlePanel from "../TitlePanel/TitlePanel";
+import countTotalPrice from "./countTotalPrice";
 import "./Style/style.css";
 
 export function GridBody() {
@@ -25,7 +26,15 @@ export function GridBody() {
             <div className="grid-item">{tableData.unit}</div>
             <div className="grid-item">{PersianNumber(tableData.price)}</div>
             <div className="grid-item">{PersianNumber(tableData.off)}</div>
-            <div className="grid-item">{PersianNumber(tableData.total)}</div>
+            <div className="grid-item">
+              {PersianNumber(
+                countTotalPrice({
+                  price: tableData.price,
+                  count: tableData.count,
+                  off: tableData.off,
+                })
+              )}
+            </div>
           </React.Fragment>
         );
       })}

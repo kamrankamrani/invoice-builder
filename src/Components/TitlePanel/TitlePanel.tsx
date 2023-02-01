@@ -28,6 +28,8 @@ export default function TitlePanel({ name, row }: IProps) {
         <div onClick={handleTitleClick}>{name}</div>
       ) : (
         <input
+          autoFocus
+          onBlur={handleTitleClick}
           value={name}
           onChange={(e) => handleTitleChangeValue(e.target.value)}
         />
