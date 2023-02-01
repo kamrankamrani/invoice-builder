@@ -1,6 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
 import type { PayloadAction } from "@reduxjs/toolkit";
-import { tableBodyType, updateTitleData } from "../Services/Types";
+import {
+  tableBodyType,
+  updatePriceData,
+  updateTitleData,
+} from "../Services/Types";
 
 const initialState: { bodyData: tableBodyType[] } = {
   bodyData: [
@@ -49,10 +53,8 @@ const tableBodySlice = createSlice({
     deleteItem(state, action: PayloadAction<number>) {
       state.bodyData.splice(action.payload, 1);
     },
-    updateItemPrice(state, action: PayloadAction<number>) {
-      state.bodyData[action.payload].total =
-        state.bodyData[action.payload].count *
-        state.bodyData[action.payload].price;
+    updateItemPrice(state, action: PayloadAction<updatePriceData>) {
+      state.bodyData[action.payload.row].total = action.payload.price;
     },
     updateTitle(state, action: PayloadAction<updateTitleData>) {
       state.bodyData[action.payload.row].name = action.payload.title;

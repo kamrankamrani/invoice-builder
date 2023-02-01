@@ -23,3 +23,8 @@ export interface updateTitleData {
   row: number;
   title: string;
 }
+
+export interface updatePriceData {
+  row: number;
+  price: number;
+}

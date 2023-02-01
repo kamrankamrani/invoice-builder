@@ -7,7 +7,6 @@ import {
   decreaseItem,
   deleteItem,
   increaseItem,
-  updateItemPrice,
 } from "../../features/tableBodySlice";
 import "./Style/style.css";
 
@@ -20,11 +19,11 @@ export default function CounterPanel({ count, row }: IProps) {
   const dispatch = useAppDispatch();
   const handleAddItemClick = () => {
     dispatch(increaseItem(row));
-    dispatch(updateItemPrice(row));
+    // dispatch(updateItemPrice(row));
   };
   const handleRemoveItemClick = () => {
     dispatch(decreaseItem(row));
-    dispatch(updateItemPrice(row));
+    // dispatch(updateItemPrice(row));
   };
   const handleDeleteClick = () => {
     dispatch(deleteItem(row));

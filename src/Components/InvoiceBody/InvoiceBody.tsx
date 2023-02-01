@@ -1,4 +1,4 @@
-import { GridBody } from "../GridBody/GridBody";
+import GridBody from "../GridBody/GridBody";
 import { GridHeader } from "../GridHeader/GridHeader";
 import "./Style/style.css";
 

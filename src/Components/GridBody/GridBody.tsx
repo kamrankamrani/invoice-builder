@@ -1,16 +1,18 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useAppSelector } from "../../customHooks";
 import { PersianNumber } from "../../Services/ConvertNumbers";
 import { tableBodyType } from "../../Services/Types";
 import CounterPanel from "../CounterPanel/CounterPanel";
 import TitlePanel from "../TitlePanel/TitlePanel";
-import countTotalPrice from "./countTotalPrice";
+import useCountTotalPrice from "./useCountTotalPrice";
 import "./Style/style.css";
 
-export function GridBody() {
+export default function GridBody() {
   const tableItems: tableBodyType[] = useAppSelector(
     (state) => state.tableBodySlice.bodyData
   );
+  const totalPrices = useCountTotalPrice(tableItems);
+
   return (
     <div className="grid grid-items-container">
       {tableItems.map((tableData, index) => {
@@ -26,15 +28,7 @@ export function GridBody() {
             <div className="grid-item">{tableData.unit}</div>
             <div className="grid-item">{PersianNumber(tableData.price)}</div>
             <div className="grid-item">{PersianNumber(tableData.off)}</div>
-            <div className="grid-item">
-              {PersianNumber(
-                countTotalPrice({
-                  price: tableData.price,
-                  count: tableData.count,
-                  off: tableData.off,
-                })
-              )}
-            </div>
+            <div className="grid-item">{PersianNumber(totalPrices[index])}</div>
           </React.Fragment>
         );
       })}
