@@ -6,6 +6,7 @@ import CounterPanel from "../CounterPanel/CounterPanel";
 import TitlePanel from "../TitlePanel/TitlePanel";
 import useCountTotalPrice from "./useCountTotalPrice";
 import "./Style/style.css";
+import PricePanel from "../PricePanel/PricePanel";
 
 export default function GridBody() {
   const tableItems: tableBodyType[] = useAppSelector(
@@ -26,7 +27,9 @@ export default function GridBody() {
               {<CounterPanel count={tableData.count} row={index} />}
             </div>
             <div className="grid-item">{tableData.unit}</div>
-            <div className="grid-item">{PersianNumber(tableData.price)}</div>
+            <div className="grid-item">
+              {<PricePanel row={index} price={tableData.price} />}
+            </div>
             <div className="grid-item">{PersianNumber(tableData.off)}</div>
             <div className="grid-item">{PersianNumber(totalPrices[index])}</div>
           </React.Fragment>

@@ -19,9 +19,9 @@ export interface tableHeaderType {
   [Symbol.iterator](): IterableIterator<string>;
 }
 
-export interface updateTitleData {
+export interface updateInputData {
   row: number;
-  title: string;
+  value: string;
 }
 
 export interface updatePriceData {

@@ -1,7 +1,7 @@
 export function PersianNumber(inputNum: number | string | undefined): string {
   if (inputNum === undefined) return "";
   if (typeof inputNum !== "string") {
-    inputNum = inputNum.toString();
+    inputNum = String(inputNum);
   }
   const length = inputNum.length;
   const persianNums = ["۰", "۱", "۲", "۳", "۴", "۵", "۶", "۷", "۸", "۹"];
@@ -11,6 +11,28 @@ export function PersianNumber(inputNum: number | string | undefined): string {
       result += persianNums[parseInt(inputNum[i])];
     } else {
       result += inputNum[i];
+    }
+  }
+  return result;
+}
+
+export function EnglishNumber(inputNum: number | string | undefined): string {
+  if (inputNum === undefined) return "";
+  if (typeof inputNum !== "string") {
+    inputNum = String(inputNum);
+  }
+  const length = inputNum.length;
+  const persianNums = ["۰", "۱", "۲", "۳", "۴", "۵", "۶", "۷", "۸", "۹"];
+  let result = "";
+  for (let i = 0; i < length; i++) {
+    const _index = persianNums.findIndex(
+      (val) => inputNum && inputNum[i] === val
+    );
+    console.log("index is ", ~_index);
+    if (~_index) {
+      result += String(_index);
+    } else {
+      result += String(inputNum[i]);
     }
   }
   return result;

@@ -19,7 +19,7 @@ export default function TitlePanel({ name, row }: IProps) {
     dispatch(
       updateTitle({
         row,
-        title: e,
+        value: e,
       })
     );
   };
