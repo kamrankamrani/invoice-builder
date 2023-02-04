@@ -12,7 +12,7 @@ export default function OffPanel({ row, off }: IProps) {
   const dispatch = useAppDispatch();
   const handleOffChangeValue = (e: string) => {
     const _num = EnglishNumber(e);
-    if (isNaN(Number(_num))) return; //if NaN don't send to redux
+    if (isNaN(Number(_num)) || Number(_num) > 100) return; //if NaN don't send to redux
     dispatch(
       updateOff({
         row,

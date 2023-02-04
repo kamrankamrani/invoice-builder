@@ -1,5 +1,6 @@
 import GridBody from "../GridBody/GridBody";
 import { GridHeader } from "../GridHeader/GridHeader";
+import GridTotal from "../GridTotal/GridTotal";
 import "./Style/style.css";
 
 export default function InvoiceBody() {
@@ -7,6 +8,7 @@ export default function InvoiceBody() {
     <div className="invoice-container">
       <GridHeader />
       <GridBody />
+      <GridTotal />
     </div>
   );
 }
