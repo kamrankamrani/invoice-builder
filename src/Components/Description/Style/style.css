@@ -1,0 +1,47 @@
+.desc-container {
+  width: min(100%, 65rem);
+  min-width: 40rem;
+  margin: auto;
+  border: 1px solid var(--light-dark-back);
+  border-radius: 0.2rem;
+  margin-top: 1rem;
+}
+
+.desc-container .title {
+  display: flex;
+  align-items: center;
+  direction: rtl;
+  font-size: clamp(1.5rem, 2.5vw, 4rem);
+  position: relative;
+}
+
+.desc-container .title .grow {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.desc-container .date {
+  font-size: 0.9rem;
+  position: absolute;
+  left: 0;
+  padding: 0 0.2rem;
+}
+
+.date .flex {
+  display: flex;
+  align-items: center;
+  column-gap: 0.8rem;
+}
+
+.date .flex input {
+  padding: 0.1rem 0.2rem;
+  margin: 0;
+  height: min-content;
+  width: max(1.5rem, 30px);
+  border: none;
+  border-bottom: 1px solid var(--light-dark-back);
+  border-radius: 0;
+  background-color: inherit;
+  text-align: center;
+}
