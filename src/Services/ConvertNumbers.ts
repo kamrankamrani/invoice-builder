@@ -28,7 +28,7 @@ export function EnglishNumber(inputNum: number | string | undefined): string {
     const _index = persianNums.findIndex(
       (val) => inputNum && inputNum[i] === val
     );
-    console.log("index is ", ~_index);
+    // console.log("input is ", inputNum);
     if (~_index) {
       result += String(_index);
     } else {

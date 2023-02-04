@@ -62,6 +62,9 @@ const tableBodySlice = createSlice({
     updatePrice(state, action: PayloadAction<updateInputData>) {
       state.bodyData[action.payload.row].price = Number(action.payload.value);
     },
+    updateOff(state, action: PayloadAction<updateInputData>) {
+      state.bodyData[action.payload.row].off = Number(action.payload.value);
+    },
   },
 });
 
@@ -72,5 +75,6 @@ export const {
   updateItemPrice,
   updateTitle,
   updatePrice,
+  updateOff,
 } = tableBodySlice.actions;
 export default tableBodySlice.reducer;

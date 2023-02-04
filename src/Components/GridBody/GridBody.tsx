@@ -7,6 +7,7 @@ import TitlePanel from "../TitlePanel/TitlePanel";
 import useCountTotalPrice from "./useCountTotalPrice";
 import "./Style/style.css";
 import PricePanel from "../PricePanel/PricePanel";
+import OffPanel from "../OffPanel/OffPanel";
 
 export default function GridBody() {
   const tableItems: tableBodyType[] = useAppSelector(
@@ -30,7 +31,9 @@ export default function GridBody() {
             <div className="grid-item">
               {<PricePanel row={index} price={tableData.price} />}
             </div>
-            <div className="grid-item">{PersianNumber(tableData.off)}</div>
+            <div className="grid-item">
+              {<OffPanel row={index} off={tableData.off} />}
+            </div>
             <div className="grid-item">{PersianNumber(totalPrices[index])}</div>
           </React.Fragment>
         );

@@ -1,21 +1,20 @@
 import { useAppDispatch } from "../../customHooks";
-import { updatePrice } from "../../features/tableBodySlice";
+import { updateOff } from "../../features/tableBodySlice";
 import { EnglishNumber, PersianNumber } from "../../Services/ConvertNumbers";
 import InputController from "../InputController/InputController";
 
 interface IProps {
   row: number;
-  price: number;
+  off: number;
 }
 
-export default function PricePanel({ row, price }: IProps) {
+export default function OffPanel({ row, off }: IProps) {
   const dispatch = useAppDispatch();
-  const handlePriceChangeValue = (e: string) => {
+  const handleOffChangeValue = (e: string) => {
     const _num = EnglishNumber(e);
     if (isNaN(Number(_num))) return; //if NaN don't send to redux
-
     dispatch(
-      updatePrice({
+      updateOff({
         row,
         value: _num,
       })
@@ -23,8 +22,8 @@ export default function PricePanel({ row, price }: IProps) {
   };
   return (
     <InputController
-      callBack={handlePriceChangeValue}
-      inputValue={PersianNumber(price)}
+      callBack={handleOffChangeValue}
+      inputValue={PersianNumber(off)}
     />
   );
 }

@@ -14,7 +14,7 @@ export default function useCountTotalPrice(
     if (tableItems.length) {
       tableItems.forEach((val, index) => {
         let _off = val.off;
-        if (!(_off > 0)) {
+        if (!(_off >= 0)) {
           _off = 1;
         }
         _off /= 100;
