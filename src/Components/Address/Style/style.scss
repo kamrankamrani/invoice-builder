@@ -1,0 +1,41 @@
+.address-container {
+    direction: rtl;
+    p {
+        margin: 0;
+    }
+}
+
+.address-container input {
+    all: unset;
+    border-bottom: 1px solid var(--light-dark-back);
+    padding: 0 0.2rem;
+    font-size: 0.9rem;
+    direction: rtl;
+}
+
+.address-container :is(input:focus) {
+    all: unset;
+    border-bottom: 1px solid var(--light-dark-back);
+    padding: 0 0.2rem;
+    font-size: 0.9rem;
+    direction: rtl;
+}
+
+.address-container > div {
+    display: flex;
+    padding: 0.3rem;
+}
+
+.address-container.address-grid {
+    display: grid;
+    grid-template-columns: repeat(2 , minmax(50% , 1fr));
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    // grid-auto-flow: row;
+}
+
+@media (max-width: 600px) {
+    .address-container.address-grid {
+        grid-template-columns: 1fr;
+    }
+}

@@ -4,11 +4,11 @@
   /* padding: 0.5rem; */
   margin: auto;
   margin-top: 1rem;
+  border: 1px solid var(--light-dark-back);
+  border-radius: 0.2rem;
 }
 
 .desc-container .title {
-  border: 1px solid var(--light-dark-back);
-  border-radius: 0.2rem;
   display: flex;
   align-items: center;
   direction: rtl;
@@ -45,6 +45,7 @@
 @media (max-width: 65rem) {
   .desc-container {
     display: flex;
+    flex-direction: column;
   }
   .desc-container .title {
     width: calc(100% - 1rem);
