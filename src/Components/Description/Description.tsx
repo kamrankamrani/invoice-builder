@@ -13,7 +13,7 @@ export function Description() {
   return (
     <div className="desc-container">
       <div className="title">
-        <div className="grow">
+        <div>
           <p>فاکتور فروش</p>
         </div>
         <div className="date">

@@ -1,12 +1,12 @@
 .grid-header {
   color: var(--text);
   direction: rtl;
-  /* padding: 0.25rem 1rem; */
 }
 
 .header-item {
   background-color: var(--light-dark-back);
   padding: 0.25rem 0.5rem;
+  font-size: 0.9rem;
 }
 
 .grid-header > div:nth-of-type(1) {

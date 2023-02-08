@@ -112,8 +112,14 @@ input:focus {
   }
 }
 
-@media screen and (max-width: 600px) {
+@media (max-width: 600px) {
   :root {
     font-size: 14px;
+  }
+}
+
+@media (max-width: 40rem) {
+  .grid {
+    width: 40rem;
   }
 }

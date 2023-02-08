@@ -1,7 +1,7 @@
 import { useAppSelector } from "../../customHooks";
 import { useEffect, useState } from "react";
-import "./Style/style.css";
 import { PersianNumber } from "../../Services/ConvertNumbers";
+import "./Style/style.css";
 
 export default function GridTotal() {
   const gridData = useAppSelector((state) => state.tableBodySlice.bodyData);
@@ -26,11 +26,11 @@ export default function GridTotal() {
   }, [gridData]);
   return (
     <div className="grid">
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
+      <></>
+      <></>
+      <></>
+      <></>
+      <></>
       <div className="grid-total-container small-grid">
         <div className="item">جمع کل</div>
         <div className="item">{PersianNumber(totalRawPrice)}</div>
