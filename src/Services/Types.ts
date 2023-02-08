@@ -28,3 +28,10 @@ export interface updatePriceData {
   row: number;
   price: number;
 }
+
+export interface addressDataType {
+  seller: string;
+  sellerAddress: string;
+  client: string;
+  clientAddress: string;
+}
