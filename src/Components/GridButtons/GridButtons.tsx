@@ -11,7 +11,7 @@ export default function GridButtons() {
   const dispatch = useAppDispatch();
 
   const generateRowIndex = () => {
-    return currentGridBodyDataLength;
+    return currentGridBodyDataLength + 1;
   };
 
   const handleAddRowClick = () => {

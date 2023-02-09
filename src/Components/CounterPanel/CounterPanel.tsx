@@ -29,7 +29,6 @@ export default function CounterPanel({ count, row }: IProps) {
   }, [currentTableData.length]);
 
   const updateRowIndexes = () => {
-    console.log(currentTableData);
     currentTableData.forEach((tableData, index) => {
       if (tableData.row !== index + 1) {
         const _data: updateRowIndexType = {
