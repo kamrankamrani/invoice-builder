@@ -7,6 +7,7 @@
 
 .address-container input {
     all: unset;
+    margin-right: 0.5rem;
     border-bottom: 1px solid var(--light-dark-back);
     padding: 0 0.2rem;
     font-size: 0.9rem;
@@ -15,6 +16,7 @@
 
 .address-container :is(input:focus) {
     all: unset;
+    margin-right: 0.5rem;
     border-bottom: 1px solid var(--light-dark-back);
     padding: 0 0.2rem;
     font-size: 0.9rem;
