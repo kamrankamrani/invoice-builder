@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "./Style/style.scss";
 
 interface IProps {
   inputValue: string;
@@ -17,12 +18,24 @@ export default function InputController(props: IProps) {
     props.callBack(eventVal);
   };
 
+  const handleInputKeyDown = (e: string) => {
+    if (e === "Enter") {
+      setInputActive(false);
+    }
+  };
+
   return (
     <>
       {!inputActive ? (
-        <div onClick={handleTitleClick}>{props.inputValue}</div>
+        <div
+          className={`${props.inputValue || "empty-value"}`}
+          onClick={handleTitleClick}
+        >
+          {props.inputValue}
+        </div>
       ) : (
         <input
+          onKeyDown={(e) => handleInputKeyDown(e.key)}
           autoFocus
           onBlur={handleTitleClick}
           value={props.inputValue}

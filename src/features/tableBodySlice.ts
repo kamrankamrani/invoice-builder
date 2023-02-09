@@ -4,6 +4,7 @@ import {
   tableBodyType,
   updateInputData,
   updatePriceData,
+  updateRowIndexType,
 } from "../Services/Types";
 
 const initialState: { bodyData: tableBodyType[] } = {
@@ -65,6 +66,12 @@ const tableBodySlice = createSlice({
     updateOff(state, action: PayloadAction<updateInputData>) {
       state.bodyData[action.payload.row].off = Number(action.payload.value);
     },
+    addEmptyRow(state, action: PayloadAction<tableBodyType>) {
+      state.bodyData.push(action.payload);
+    },
+    updateRowIndex(state, action: PayloadAction<updateRowIndexType>) {
+      state.bodyData[action.payload.row].row = action.payload.newIndex;
+    },
   },
 });
 
@@ -76,5 +83,7 @@ export const {
   updateTitle,
   updatePrice,
   updateOff,
+  addEmptyRow,
+  updateRowIndex,
 } = tableBodySlice.actions;
 export default tableBodySlice.reducer;

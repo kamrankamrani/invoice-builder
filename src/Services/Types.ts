@@ -23,10 +23,14 @@ export interface updateInputData {
   row: number;
   value: string;
 }
-
 export interface updatePriceData {
   row: number;
   price: number;
+}
+
+export interface updateRowIndexType {
+  row: number;
+  newIndex: number;
 }
 
 export interface addressDataType {
